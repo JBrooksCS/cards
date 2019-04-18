@@ -1,10 +1,11 @@
 let mkbutton = document.querySelector("#creator-btn")
 
 let components = document.querySelector(".addedComponents")
+let box = document.querySelector("#text-box")
 
 function factory(cardText){
 
-    const fragment = document.createDocumentFragment()
+    
 
     const container = document.createElement('div')
     container.className = "cardContainer";
@@ -12,13 +13,19 @@ function factory(cardText){
     
     const removebtn = document.createElement('button')
     removebtn.className = "remove";
-    container.appendChild(removebtn)
+    removebtn.textContent = "DELETE";
+    container.appendChild(removebtn);
+    removebtn.addEventListener("click", function(event){
+        //console.log(event.target);
+        let container = removebtn.parentNode;
+        container.removeChild(removebtn);
+        container.parentNode.removeChild(container);
+    })
+
+
     
 
-
-    fragment.appendChild(container)
-
-    components.appendChild(fragment)
+    components.appendChild(container)
 
 
 }
@@ -27,9 +34,11 @@ mkbutton.addEventListener("click", function(event){
     let cardText = document.querySelector("#text-box").value;
     console.log(cardText);
     factory(cardText)
-
-
+    box.value = "";
 })
+
+
+
 
 
 
