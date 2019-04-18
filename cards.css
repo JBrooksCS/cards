@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 100%;
+}
+#main-content{
+    
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+#creator-btn, .remove{
+    
+    display: flex;
+    align-self: center;
+    
+    width: 12%;
+}
+.cardContainer{
+    border : 1px solid red;
+    margin: 5px;
+
+}
